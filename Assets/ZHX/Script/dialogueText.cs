@@ -5,10 +5,10 @@ using UnityEngine;
 public class DialogueTypewriter : MonoBehaviour
 {
     [Header("UI")]
-    public TMP_Text dialogueText;        
-    public GameObject dialogueRoot;      
-    public CanvasGroup dialogueCanvasGroup; 
-    public CanvasGroup fadeOverlay;       
+    public TMP_Text dialogueText;
+    public GameObject dialogueRoot;
+    public CanvasGroup dialogueCanvasGroup;
+    public CanvasGroup fadeOverlay;
 
     [Header("Dialogue")]
     [TextArea(2, 4)]
@@ -24,9 +24,13 @@ public class DialogueTypewriter : MonoBehaviour
     public float switchDelayAfterLastLine = 2.0f;
 
     [Header("Transition")]
-    public float uiFadeOutTime = 0.35f;    
-    public float fadeToBlackTime = 0.35f;  
+    public float uiFadeOutTime = 0.35f;
+    public float fadeToBlackTime = 0.35f;
     public float fadeFromBlackTime = 0.35f;
+
+    [Header("Choice UI")]
+    public ContractChoiceUI contractChoiceUI;
+    public float showChoiceDelay = 0.0f;
 
     int index = 0;
     Coroutine playRoutine;
@@ -35,8 +39,8 @@ public class DialogueTypewriter : MonoBehaviour
     {
         if (dialogueText == null || lines == null || lines.Length == 0) return;
 
-
         if (dialogueRoot != null) dialogueRoot.SetActive(true);
+
         if (dialogueCanvasGroup != null)
         {
             dialogueCanvasGroup.alpha = 1f;
@@ -44,7 +48,6 @@ public class DialogueTypewriter : MonoBehaviour
             dialogueCanvasGroup.blocksRaycasts = true;
         }
 
-    
         if (fadeOverlay != null)
         {
             fadeOverlay.alpha = 0f;
@@ -69,7 +72,6 @@ public class DialogueTypewriter : MonoBehaviour
 
         yield return new WaitForSeconds(switchDelayAfterLastLine);
 
-    
         yield return StartCoroutine(TransitionToDialogueCam());
     }
 
@@ -86,7 +88,7 @@ public class DialogueTypewriter : MonoBehaviour
 
     IEnumerator TransitionToDialogueCam()
     {
-     
+        // Clear text + fade out dialogue UI
         if (dialogueText != null) dialogueText.text = "";
 
         if (dialogueCanvasGroup != null)
@@ -94,17 +96,21 @@ public class DialogueTypewriter : MonoBehaviour
 
         if (dialogueRoot != null) dialogueRoot.SetActive(false);
 
-       
+        // Fade to black
         if (fadeOverlay != null)
             yield return StartCoroutine(FadeCanvasGroup(fadeOverlay, 0f, 1f, fadeToBlackTime));
 
-    
+        // Switch cameras while black
         if (mainCam != null) mainCam.gameObject.SetActive(false);
         if (dialogueCam != null) dialogueCam.gameObject.SetActive(true);
 
-       
+        // Fade from black
         if (fadeOverlay != null)
             yield return StartCoroutine(FadeCanvasGroup(fadeOverlay, 1f, 0f, fadeFromBlackTime));
+
+        // Show choice UI AFTER the new camera is visible
+        if (showChoiceDelay > 0f) yield return new WaitForSeconds(showChoiceDelay);
+        if (contractChoiceUI != null) contractChoiceUI.Show();
     }
 
     IEnumerator FadeCanvasGroup(CanvasGroup cg, float from, float to, float duration)
@@ -113,13 +119,13 @@ public class DialogueTypewriter : MonoBehaviour
 
         cg.alpha = from;
 
-        float t = 0f;
         if (duration <= 0f)
         {
             cg.alpha = to;
             yield break;
         }
 
+        float t = 0f;
         while (t < duration)
         {
             t += Time.deltaTime;
