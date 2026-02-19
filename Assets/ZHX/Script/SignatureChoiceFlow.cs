@@ -2,17 +2,18 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class SignatureChoiceFlow : MonoBehaviour
 {
     [Header("UI")]
-    public GameObject buttonsRoot;          // container of the two buttons
+    public GameObject buttonsRoot;
     public Button signButton;
     public Button declineButton;
 
     [Header("Signature Image (UI)")]
-    public Image signatureImage;            // the Image that shows the signature
-    public Sprite[] signatureFrames;        // drag 31 sprites here in order
+    public Image signatureImage;
+    public Sprite[] signatureFrames;
     public float fps = 24f;
     public bool hideSignatureOnStart = true;
 
@@ -22,11 +23,16 @@ public class SignatureChoiceFlow : MonoBehaviour
     [Header("Fade & Scene")]
     public CanvasGroup fadeOverlay;
     public float fadeToBlackTime = 0.6f;
-    public string nextSceneName = "HeistTutorial";
 
-    [Header("Decline")]
-    public float declineHoldTime = 0.6f;
+    [Header("Intertitle (Black Screen Title)")]
+    public TMP_Text intertitleText;                 // assign LocationTitleText (TMP)
+    [TextArea(1, 2)] public string intertitle = "Mus¨¦e d'Orsay";
+    public float intertitleHoldSeconds = 3.5f;      // 3~4 seconds
+
+    [Header("Scenes")]
+    public string nextSceneName = "S2";
     public string declineSceneName = "StartMenu";
+    public float declineHoldTime = 0.6f;
 
     Coroutine routine;
 
@@ -46,10 +52,7 @@ public class SignatureChoiceFlow : MonoBehaviour
                 signatureImage.enabled = false;
                 signatureImage.sprite = null;
             }
-            else
-            {
-                signatureImage.enabled = true;
-            }
+            else signatureImage.enabled = true;
         }
 
         if (fadeOverlay != null)
@@ -57,6 +60,11 @@ public class SignatureChoiceFlow : MonoBehaviour
             fadeOverlay.alpha = 0f;
             fadeOverlay.blocksRaycasts = false;
             fadeOverlay.interactable = false;
+        }
+
+        if (intertitleText != null)
+        {
+            intertitleText.gameObject.SetActive(false);
         }
     }
 
@@ -89,7 +97,7 @@ public class SignatureChoiceFlow : MonoBehaviour
         if (holdAfterSignature > 0f)
             yield return new WaitForSeconds(holdAfterSignature);
 
-        yield return FadeToBlackAndLoad(nextSceneName);
+        yield return FadeHoldAndLoad(nextSceneName, intertitle, intertitleHoldSeconds);
     }
 
     public void OnDecline()
@@ -105,7 +113,7 @@ public class SignatureChoiceFlow : MonoBehaviour
         if (declineHoldTime > 0f)
             yield return new WaitForSeconds(declineHoldTime);
 
-        yield return FadeToBlackAndLoad(declineSceneName);
+        yield return FadeHoldAndLoad(declineSceneName, "", 0f);
     }
 
     IEnumerator PlaySignatureOnce()
@@ -124,24 +132,44 @@ public class SignatureChoiceFlow : MonoBehaviour
         }
     }
 
-    IEnumerator FadeToBlackAndLoad(string sceneName)
+    IEnumerator FadeHoldAndLoad(string sceneName, string title, float holdSeconds)
     {
+        // Fade to black
         if (fadeOverlay != null)
         {
             fadeOverlay.blocksRaycasts = true;
             fadeOverlay.interactable = false;
 
             float from = fadeOverlay.alpha;
-            float to = 1f;
-
             float t = 0f;
-            while (t < fadeToBlackTime)
+
+            if (fadeToBlackTime <= 0f)
             {
-                t += Time.deltaTime;
-                fadeOverlay.alpha = Mathf.Lerp(from, to, t / fadeToBlackTime);
-                yield return null;
+                fadeOverlay.alpha = 1f;
             }
-            fadeOverlay.alpha = 1f;
+            else
+            {
+                while (t < fadeToBlackTime)
+                {
+                    t += Time.deltaTime;
+                    fadeOverlay.alpha = Mathf.Lerp(from, 1f, t / fadeToBlackTime);
+                    yield return null;
+                }
+                fadeOverlay.alpha = 1f;
+            }
+        }
+
+        // Show intertitle on black screen
+        if (intertitleText != null && holdSeconds > 0f && !string.IsNullOrEmpty(title))
+        {
+            intertitleText.text = title;
+            intertitleText.gameObject.SetActive(true);
+            yield return new WaitForSeconds(holdSeconds);
+            intertitleText.gameObject.SetActive(false);
+        }
+        else if (holdSeconds > 0f)
+        {
+            yield return new WaitForSeconds(holdSeconds);
         }
 
         SceneManager.LoadScene(sceneName);
