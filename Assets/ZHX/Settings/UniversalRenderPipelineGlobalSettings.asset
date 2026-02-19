@@ -54,6 +54,7 @@ MonoBehaviour:
       - rid: 6852985685364965394
       - rid: 8712630790384254976
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       - rid: 8417153134075576320
       - rid: 8417153134075576321
       - rid: 8417153134075576322
@@ -61,12 +62,17 @@ MonoBehaviour:
       - rid: 8417153134075576324
       - rid: 8417153134075576325
 =======
+=======
+>>>>>>> Stashed changes
       - rid: 984911994205765632
       - rid: 984911994205765633
       - rid: 984911994205765634
       - rid: 984911994205765635
       - rid: 984911994205765636
       - rid: 984911994205765637
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     m_RuntimeSettings:
       m_List: []
@@ -101,7 +107,10 @@ MonoBehaviour:
     version: 2
     RefIds:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     - rid: 984911994205765632
       type: {class: ScreenSpaceAmbientOcclusionPersistentResources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.Runtime}
       data:
