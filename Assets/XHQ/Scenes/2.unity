@@ -272,8 +272,17 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
+<<<<<<< HEAD
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0.7071068, w: 0}
+<<<<<<< HEAD
+  m_LocalPosition: {x: 1548.0481, y: 31, z: -1699.2}
+=======
   m_LocalRotation: {x: 0.71373004, y: 0.0010768967, z: -0.0010387371, w: 0.7004193}
   m_LocalPosition: {x: 1549.3994, y: 25.642714, z: -1667.6514}
+>>>>>>> e072b5d76541fadabf2b7b4c23c50277e098a37a
+=======
+  m_LocalPosition: {x: 1536.3065, y: 14.383242, z: -1693.0288}
+>>>>>>> parent of cf34f18 (更新了解密场景运镜+开锁动画)
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -492,6 +501,164 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
+<<<<<<< HEAD
+<<<<<<< HEAD
+--- !u!1 &451775886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 451775888}
+  - component: {fileID: 451775887}
+  m_Layer: 0
+  m_Name: Vcam_Close
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &451775887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451775886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Priority:
+    Enabled: 1
+    m_Value: 10
+  OutputChannel: 1
+  StandbyUpdate: 2
+  m_StreamingVersion: 20241001
+  m_LegacyPriority: 0
+  Target:
+    TrackingTarget: {fileID: 0}
+    LookAtTarget: {fileID: 0}
+    CustomLookAtTarget: 0
+  Lens:
+    FieldOfView: 50
+    OrthographicSize: 5
+    NearClipPlane: 0.3
+    FarClipPlane: 1000
+    Dutch: 0
+    ModeOverride: 0
+    PhysicalProperties:
+      GateFit: 2
+      SensorSize: {x: 21.946, y: 16.002}
+      LensShift: {x: 0, y: 0}
+      FocusDistance: 10
+      Iso: 200
+      ShutterSpeed: 0.005
+      Aperture: 16
+      BladeCount: 5
+      Curvature: {x: 2, y: 11}
+      BarrelClipping: 0.25
+      Anamorphism: 0
+  BlendHint: 0
+--- !u!4 &451775888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451775886}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0.7071068, w: 0}
+  m_LocalPosition: {x: 1537.3385, y: 13.923252, z: -1693.3513}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
+=======
+>>>>>>> parent of cf34f18 (更新了解密场景运镜+开锁动画)
+--- !u!1001 &727842366
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 40d72807db32c504b989fadc70c7266f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3620.9875
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40d72807db32c504b989fadc70c7266f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3620.9875
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40d72807db32c504b989fadc70c7266f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3620.9875
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40d72807db32c504b989fadc70c7266f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1549.16
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40d72807db32c504b989fadc70c7266f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40d72807db32c504b989fadc70c7266f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1699.56
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40d72807db32c504b989fadc70c7266f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40d72807db32c504b989fadc70c7266f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40d72807db32c504b989fadc70c7266f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40d72807db32c504b989fadc70c7266f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40d72807db32c504b989fadc70c7266f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40d72807db32c504b989fadc70c7266f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40d72807db32c504b989fadc70c7266f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 40d72807db32c504b989fadc70c7266f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 44127928f0b5e5445bb205fd7d263046, type: 2}
+    - target: {fileID: -4765159745476391986, guid: 40d72807db32c504b989fadc70c7266f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 44127928f0b5e5445bb205fd7d263046, type: 2}
+    - target: {fileID: 919132149155446097, guid: 40d72807db32c504b989fadc70c7266f, type: 3}
+      propertyPath: m_Name
+      value: Victorian Painting
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 40d72807db32c504b989fadc70c7266f, type: 3}
+=======
+>>>>>>> e072b5d76541fadabf2b7b4c23c50277e098a37a
 --- !u!1 &818658306
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,8 +708,18 @@ Transform:
   m_GameObject: {fileID: 818658306}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
+<<<<<<< HEAD
+  m_LocalPosition: {x: 1539.229, y: 3.1796536, z: -1688.414}
+  m_LocalScale: {x: 0.98747003, y: 1.3118709, z: 0.3286374}
+=======
   m_LocalPosition: {x: 1553.69, y: 1.49, z: -1658.12}
   m_LocalScale: {x: 2.2736, y: 3.0205169, z: 1.2319219}
+>>>>>>> e072b5d76541fadabf2b7b4c23c50277e098a37a
+=======
+  m_LocalPosition: {x: 1539.3506, y: 3.1796536, z: -1688.725}
+  m_LocalScale: {x: 0.98747003, y: 1.3118709, z: 0.5350483}
+>>>>>>> parent of cf34f18 (更新了解密场景运镜+开锁动画)
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1033,3 +1210,13 @@ SceneRoots:
   - {fileID: 3026980892325319591}
   - {fileID: 818658308}
   - {fileID: 1404380110}
+<<<<<<< HEAD
+<<<<<<< HEAD
+  - {fileID: 1512477464}
+  - {fileID: 451775888}
+  - {fileID: 1480784685}
+=======
+>>>>>>> e072b5d76541fadabf2b7b4c23c50277e098a37a
+=======
+  - {fileID: 1227125673}
+>>>>>>> parent of cf34f18 (更新了解密场景运镜+开锁动画)

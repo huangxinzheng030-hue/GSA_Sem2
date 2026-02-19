@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 67ac6aa6cef43d546b3ca092e5c6aebd
+<<<<<<<< HEAD:Assets/Material/Chess.mat.meta
+guid: b79e0c30281229849af6d7c7ff9183b1
+========
+guid: 6a19aa942f59a8f4cae684e105b2d4d9
+>>>>>>>> parent of cf34f18 (更新了解密场景运镜+开锁动画):Assets/XHQ/Material/maze.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000

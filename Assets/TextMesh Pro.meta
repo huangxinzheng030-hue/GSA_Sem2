@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/YLW/TextMesh Pro.meta
+<<<<<<< HEAD
 guid: 09f399661cb83f44c9a6466c6e2d8d69
+=======
+guid: a6d9730a9d5852e44baa41148ea9d4ed
+>>>>>>> fea387f55cbc4f7e14fcfc34800840347a1ee721
+=======
+guid: 09f399661cb83f44c9a6466c6e2d8d69
+>>>>>>> e072b5d76541fadabf2b7b4c23c50277e098a37a:Assets/TextMesh Pro.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

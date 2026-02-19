@@ -1,5 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 6b7c98d461a912e489d9842b7cfd8c01
+=======
+<<<<<<<< HEAD:Assets/Audio/Farewell.meta
+<<<<<<<< HEAD:Assets/Audio/Farewell.meta
+guid: 0e7f8d938447f7e4cb35149dbb473cec
+========
+guid: 50cb7ed93e3a5fb4d8ee05c5fdfe2d0e
+>>>>>>>> e072b5d76541fadabf2b7b4c23c50277e098a37a:Assets/TextMesh Pro/Resources/Fonts & Materials.meta
+========
+guid: ab5b7a6025f47a245a3453b960383798
+>>>>>>>> parent of cf34f18 (更新了解密场景运镜+开锁动画):Assets/LZX.meta
+>>>>>>> parent of cf34f18 (更新了解密场景运镜+开锁动画)
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

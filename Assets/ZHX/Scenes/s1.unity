@@ -220,9 +220,8 @@ GameObject:
   - component: {fileID: 104153640}
   - component: {fileID: 104153639}
   - component: {fileID: 104153638}
-  - component: {fileID: 104153641}
   m_Layer: 5
-  m_Name: DialogueUI
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,7 +241,6 @@ RectTransform:
   m_Children:
   - {fileID: 1256687194}
   - {fileID: 176727989}
-  - {fileID: 1024453454}
   m_Father: {fileID: 1571392257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -313,6 +311,7 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+<<<<<<< HEAD
 --- !u!225 &104153641
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -423,6 +422,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+=======
+>>>>>>> parent of cf34f18 (更新了解密场景运镜+开锁动画)
 --- !u!1 &176727988
 GameObject:
   m_ObjectHideFlags: 0
@@ -2306,6 +2307,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &896422420
 GameObject:
   m_ObjectHideFlags: 0
@@ -2907,6 +2909,8 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+=======
+>>>>>>> parent of cf34f18 (更新了解密场景运镜+开锁动画)
 --- !u!1 &1057558333
 GameObject:
   m_ObjectHideFlags: 0
@@ -3356,9 +3360,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1571392257}
   - component: {fileID: 1571392256}
+<<<<<<< HEAD
   - component: {fileID: 1571392259}
   - component: {fileID: 1571392258}
   - component: {fileID: 1571392260}
+=======
+>>>>>>> parent of cf34f18 (更新了解密场景运镜+开锁动画)
   m_Layer: 0
   m_Name: dialogueText
   m_TagString: Untagged
@@ -3379,14 +3386,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 1256687195}
+<<<<<<< HEAD
   dialogueRoot: {fileID: 104153636}
   dialogueCanvasGroup: {fileID: 104153641}
   fadeOverlay: {fileID: 1024453457}
+=======
+>>>>>>> parent of cf34f18 (更新了解密场景运镜+开锁动画)
   lines:
   - This is your contract.
   - Take a look,
   - "and sign it when you\u2019re good."
   charInterval: 0.08
+<<<<<<< HEAD
   lineHoldTime: 1
   mainCam: {fileID: 330585545}
   dialogueCam: {fileID: 1021256185}
@@ -3396,6 +3407,9 @@ MonoBehaviour:
   fadeFromBlackTime: 0.35
   contractChoiceUI: {fileID: 226991857}
   showChoiceDelay: 0
+=======
+  lineHoldTime: 1.5
+>>>>>>> parent of cf34f18 (更新了解密场景运镜+开锁动画)
 --- !u!4 &1571392257
 Transform:
   m_ObjectHideFlags: 0
@@ -3413,6 +3427,7 @@ Transform:
   - {fileID: 198058693}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!95 &1571392258
 Animator:
   serializedVersion: 7
@@ -3502,6 +3517,8 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+=======
+>>>>>>> parent of cf34f18 (更新了解密场景运镜+开锁动画)
 --- !u!1001 &1592033973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4111,7 +4128,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 330585546}
-  - {fileID: 1021256186}
   - {fileID: 410087041}
   - {fileID: 222572767}
   - {fileID: 2051258449}

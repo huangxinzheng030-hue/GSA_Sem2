@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/ZHX/Animator Controller/signclip/Sign.controller.meta
 guid: d692113720d907d4f88fb0bb46521f62
+========
+guid: 6d11acbfb7c31d7419c9ce6c9f8ef555
+>>>>>>>> parent of cf34f18 (更新了解密场景运镜+开锁动画):Assets/XHQ/Material/ball.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 9100000
