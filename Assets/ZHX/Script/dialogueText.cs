@@ -6,15 +6,19 @@ public class DialogueTypewriter : MonoBehaviour
 {
     [Header("UI")]
     public TMP_Text dialogueText;
+<<<<<<< HEAD
     public GameObject dialogueRoot;
     public CanvasGroup dialogueCanvasGroup;
     public CanvasGroup fadeOverlay;
+=======
+>>>>>>> parent of cf34f18 (更新了解密场景运镜+开锁动画)
 
     [Header("Dialogue")]
     [TextArea(2, 4)]
     public string[] lines;
 
     [Header("Timing")]
+<<<<<<< HEAD
     public float charInterval = 0.04f;
     public float lineHoldTime = 1.0f;
 
@@ -27,6 +31,10 @@ public class DialogueTypewriter : MonoBehaviour
     public float uiFadeOutTime = 0.35f;
     public float fadeToBlackTime = 0.35f;
     public float fadeFromBlackTime = 0.35f;
+=======
+    public float charInterval = 0.04f;  
+    public float lineHoldTime = 1.0f;   
+>>>>>>> parent of cf34f18 (更新了解密场景运镜+开锁动画)
 
     [Header("Choice UI")]
     public ContractChoiceUI contractChoiceUI;
@@ -38,6 +46,7 @@ public class DialogueTypewriter : MonoBehaviour
     void OnEnable()
     {
         if (dialogueText == null || lines == null || lines.Length == 0) return;
+<<<<<<< HEAD
 
         if (dialogueRoot != null) dialogueRoot.SetActive(true);
 
@@ -55,6 +64,8 @@ public class DialogueTypewriter : MonoBehaviour
             fadeOverlay.blocksRaycasts = false;
         }
 
+=======
+>>>>>>> parent of cf34f18 (更新了解密场景运镜+开锁动画)
         index = 0;
 
         if (playRoutine != null) StopCoroutine(playRoutine);
@@ -69,22 +80,26 @@ public class DialogueTypewriter : MonoBehaviour
             yield return new WaitForSeconds(lineHoldTime);
             index++;
         }
+<<<<<<< HEAD
 
         yield return new WaitForSeconds(switchDelayAfterLastLine);
 
         yield return StartCoroutine(TransitionToDialogueCam());
+=======
+>>>>>>> parent of cf34f18 (更新了解密场景运镜+开锁动画)
     }
 
     IEnumerator TypeLine(string line)
     {
         dialogueText.text = "";
-
+      
         for (int i = 0; i < line.Length; i++)
         {
             dialogueText.text += line[i];
             yield return new WaitForSeconds(charInterval);
         }
     }
+<<<<<<< HEAD
 
     IEnumerator TransitionToDialogueCam()
     {
@@ -135,4 +150,6 @@ public class DialogueTypewriter : MonoBehaviour
 
         cg.alpha = to;
     }
+=======
+>>>>>>> parent of cf34f18 (更新了解密场景运镜+开锁动画)
 }

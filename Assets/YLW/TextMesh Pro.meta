@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 7ab526892eb4e2640968207fd4ce96d4
+=======
+guid: 09f399661cb83f44c9a6466c6e2d8d69
+>>>>>>> parent of cf34f18 (更新了解密场景运镜+开锁动画)
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
