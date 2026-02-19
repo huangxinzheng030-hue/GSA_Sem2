@@ -5,15 +5,28 @@ using UnityEngine;
 public class DialogueTypewriter : MonoBehaviour
 {
     [Header("UI")]
-    public TMP_Text dialogueText;
+    public TMP_Text dialogueText;        
+    public GameObject dialogueRoot;      
+    public CanvasGroup dialogueCanvasGroup; 
+    public CanvasGroup fadeOverlay;       
 
     [Header("Dialogue")]
     [TextArea(2, 4)]
     public string[] lines;
 
     [Header("Timing")]
-    public float charInterval = 0.04f;  
-    public float lineHoldTime = 1.0f;   
+    public float charInterval = 0.04f;
+    public float lineHoldTime = 1.0f;
+
+    [Header("Camera Switch")]
+    public Camera mainCam;
+    public Camera dialogueCam;
+    public float switchDelayAfterLastLine = 2.0f;
+
+    [Header("Transition")]
+    public float uiFadeOutTime = 0.35f;    
+    public float fadeToBlackTime = 0.35f;  
+    public float fadeFromBlackTime = 0.35f;
 
     int index = 0;
     Coroutine playRoutine;
@@ -21,6 +34,24 @@ public class DialogueTypewriter : MonoBehaviour
     void OnEnable()
     {
         if (dialogueText == null || lines == null || lines.Length == 0) return;
+
+
+        if (dialogueRoot != null) dialogueRoot.SetActive(true);
+        if (dialogueCanvasGroup != null)
+        {
+            dialogueCanvasGroup.alpha = 1f;
+            dialogueCanvasGroup.interactable = true;
+            dialogueCanvasGroup.blocksRaycasts = true;
+        }
+
+    
+        if (fadeOverlay != null)
+        {
+            fadeOverlay.alpha = 0f;
+            fadeOverlay.interactable = false;
+            fadeOverlay.blocksRaycasts = false;
+        }
+
         index = 0;
 
         if (playRoutine != null) StopCoroutine(playRoutine);
@@ -35,16 +66,67 @@ public class DialogueTypewriter : MonoBehaviour
             yield return new WaitForSeconds(lineHoldTime);
             index++;
         }
+
+        yield return new WaitForSeconds(switchDelayAfterLastLine);
+
+    
+        yield return StartCoroutine(TransitionToDialogueCam());
     }
 
     IEnumerator TypeLine(string line)
     {
         dialogueText.text = "";
-      
+
         for (int i = 0; i < line.Length; i++)
         {
             dialogueText.text += line[i];
             yield return new WaitForSeconds(charInterval);
         }
+    }
+
+    IEnumerator TransitionToDialogueCam()
+    {
+     
+        if (dialogueText != null) dialogueText.text = "";
+
+        if (dialogueCanvasGroup != null)
+            yield return StartCoroutine(FadeCanvasGroup(dialogueCanvasGroup, 1f, 0f, uiFadeOutTime));
+
+        if (dialogueRoot != null) dialogueRoot.SetActive(false);
+
+       
+        if (fadeOverlay != null)
+            yield return StartCoroutine(FadeCanvasGroup(fadeOverlay, 0f, 1f, fadeToBlackTime));
+
+    
+        if (mainCam != null) mainCam.gameObject.SetActive(false);
+        if (dialogueCam != null) dialogueCam.gameObject.SetActive(true);
+
+       
+        if (fadeOverlay != null)
+            yield return StartCoroutine(FadeCanvasGroup(fadeOverlay, 1f, 0f, fadeFromBlackTime));
+    }
+
+    IEnumerator FadeCanvasGroup(CanvasGroup cg, float from, float to, float duration)
+    {
+        if (cg == null) yield break;
+
+        cg.alpha = from;
+
+        float t = 0f;
+        if (duration <= 0f)
+        {
+            cg.alpha = to;
+            yield break;
+        }
+
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            cg.alpha = Mathf.Lerp(from, to, t / duration);
+            yield return null;
+        }
+
+        cg.alpha = to;
     }
 }

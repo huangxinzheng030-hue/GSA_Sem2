@@ -1,8 +1,19 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 2e498d1c8094910479dc3e1b768306a4
 timeCreated: 1484171803
 licenseType: Pro
 NativeFormatImporter:
+=======
+<<<<<<<< HEAD:Assets/YLW/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset.meta
+guid: fdcc855fd70b4e345b31ffda4b5663af
+========
+guid: 3e92ccf81b0230c46bceb9e020392ad1
+>>>>>>>> d4d29aa8526a33d874cec5dcc908af9663fe7fa4:Assets/Scenes/Gabriel/Background cubes.mat.meta
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+>>>>>>> fea387f55cbc4f7e14fcfc34800840347a1ee721
   userData: 
   assetBundleName: 
   assetBundleVariant: 
